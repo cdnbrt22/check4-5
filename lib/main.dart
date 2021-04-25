@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_database/providers/transaction_provider.dart';
-import 'package:flutter_database/screens/form_screen.dart';
-import 'package:flutter_database/screens/home_screen.dart';
+import 'package:flutter_database/screens/form.dart';
+import 'package:flutter_database/screens/home.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'models/Transactions.dart';
@@ -21,11 +21,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: MyHomePage(title: '6135512015'),
+        home: MyHomePage(title: 'Checkpoint 4+5'),
       ),
     );
   }
@@ -56,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.list),
               text: "List",
             ),
-            Tab(icon: Icon(Icons.add), text: "Add")
+            Tab(icon: Icon(Icons.add), text: "Register")
           ],
         ),
       ),

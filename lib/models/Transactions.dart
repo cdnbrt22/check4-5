@@ -1,12 +1,12 @@
 class Transactions {
-  String title; //ชื่อ
+  String title;
   String lastname;
   String address;
   String phone;
-  double amount; //เบอร์
+  double amount;
   String email;
   String password;
-  DateTime date; //วันที่ เวลา บันทึกรายการ
+  DateTime date;
 
   Transactions(
       {this.title,

@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_database/database/transaction_db.dart';
 import 'package:flutter_database/models/Transactions.dart';
 import 'package:flutter_database/providers/transaction_provider.dart';
-// import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'EditForm.dart';
-
-// import 'form_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,7 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     loadusers();
     super.initState();
     Provider.of<TransactionProvider>(context, listen: false).initData();
@@ -32,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepOrange[300],
-          title: Text("data"),
+          backgroundColor: Colors.blueGrey,
+          title: Text('Check5_5835512123'),
           actions: [
             IconButton(
                 icon: Icon(Icons.exit_to_app),
@@ -48,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
             if (count <= 0) {
               return Center(
                 child: Text(
-                  "no data",
+                  "No data",
                   style: TextStyle(fontSize: 35),
                 ),
               );
@@ -101,21 +95,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: SizedBox(
                                   width: 80,
                                   height: 30,
-                                  child: ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                          primary: Colors.deepOrange[300]),
-                                      onPressed: () {
-                                        provider
-                                            .removeTransaction(
-                                                Transactions(email: data.email))
-                                            .whenComplete(() {
-                                          Provider.of<TransactionProvider>(
-                                                  context,
-                                                  listen: false)
-                                              .initData();
-                                        });
-                                      },
-                                      child: Text('delete')),
+                                  child: RaisedButton(
+                                    child: Text('Delete'),
+                                    onPressed: () {
+                                      provider
+                                          .removeTransaction(
+                                              Transactions(email: data.email))
+                                          .whenComplete(() {
+                                        Provider.of<TransactionProvider>(
+                                                context,
+                                                listen: false)
+                                            .initData();
+                                      });
+                                    },
+                                  ),
                                 ),
                               ),
                             ],

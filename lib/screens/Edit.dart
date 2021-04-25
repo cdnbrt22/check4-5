@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class EditForm extends StatefulWidget {
-  final String title; //ชื่อ
+  final String title;
   final String lastname;
   final String address;
-  final double amount; //เบอร์
+  final double amount;
   final String password;
 
   EditForm({
@@ -23,7 +23,7 @@ class EditForm extends StatefulWidget {
 class _EditFormState extends State<EditForm> {
   final formKey = GlobalKey<FormState>();
   double padding = 8;
-  // controller
+
   TextEditingController titleController;
   TextEditingController lastnameController;
   TextEditingController addressController;
@@ -31,8 +31,6 @@ class _EditFormState extends State<EditForm> {
   TextEditingController passwordController;
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState TextEditingController titleController;
     titleController = TextEditingController(text: widget.title);
     lastnameController = TextEditingController(text: widget.lastname);
     addressController = TextEditingController(text: widget.address);
@@ -53,16 +51,14 @@ class _EditFormState extends State<EditForm> {
           child: Form(
             key: formKey,
             child: ListView(
-              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextFormField(
                   decoration: new InputDecoration(labelText: "Name"),
                   autofocus: false,
                   controller: titleController,
                   validator: (String str) {
-                    //ชื่อรายการเป็นค่าว่าง
                     if (str.isEmpty) {
-                      return "name plase";
+                      return "Enter your name plase";
                     }
                     return null;
                   },
@@ -72,9 +68,8 @@ class _EditFormState extends State<EditForm> {
                   autofocus: false,
                   controller: lastnameController,
                   validator: (String str) {
-                    //ชื่อรายการเป็นค่าว่าง
                     if (str.isEmpty) {
-                      return "last name plase";
+                      return "Enter your last name plase";
                     }
                     return null;
                   },
@@ -84,9 +79,8 @@ class _EditFormState extends State<EditForm> {
                   autofocus: false,
                   controller: addressController,
                   validator: (String str) {
-                    //ชื่อรายการเป็นค่าว่าง
                     if (str.isEmpty) {
-                      return "address plase";
+                      return "Enter your address plase";
                     }
                     return null;
                   },
@@ -111,7 +105,6 @@ class _EditFormState extends State<EditForm> {
                   autofocus: false,
                   controller: passwordController,
                   validator: (String str) {
-                    //ชื่อรายการเป็นค่าว่าง
                     if (str.isEmpty) {
                       return "Password plase";
                     }
